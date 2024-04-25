@@ -1,0 +1,124 @@
+/* Cabeçalho */
+
+.cabecalho__container {
+    display: flex;
+    /* Alinhando o cabeçalho no centro com espaçamento */
+    align-items: center;
+    justify-content: space-between;
+    /* Colocando o cabeçalho fixo no topo */
+    position: fixed;
+    top: 0%;
+}
+
+.cabecalho__pesquisar__item {
+    /* Colocando a barra de pesquisa para 
+    não aparecer em layouts mobile (Mobile First) */
+    display: none;
+}
+
+
+/* Aside - Menu Lateral */
+
+.menu__container {
+    position: fixed;
+    bottom: 0%;
+    height: 6em;
+    width: 100%;
+}
+
+.menu__lista {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li {
+    align-self: center;
+}
+
+.menu__itens {
+    display: flex;
+    flex-flow: column;
+    gap: .5em;
+}
+
+/* Aplicando display none em 3 litas de conteúdos, sem utilizar criação de novas classes. */
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+    display: none;
+}
+
+/* Menu Superior */
+
+.superior__secao__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: scroll;
+    gap: 1em;
+}
+
+
+/* Rodapé */
+
+.rodape__container {
+    display: flex;
+    /* Propriedade utilizada ao invés de flex-direction e flex-wrap */
+    flex-flow: column wrap;
+}
+
+@media (min-width: 834px) {
+
+
+    /* Cabeçalho */
+
+    .cabecalho__pesquisar__item {
+        display: block;
+    }
+
+
+    /* Aside - Menu Lateral */
+    .menu__container {
+        display: flex;
+        flex-flow: column;
+        height: auto;
+        width: 5.5em;
+        top: 5em;
+    }
+    
+    .menu__lista {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        gap: 2em;
+    }
+    
+    /* Rodapé */
+
+    .rodape__container {
+        justify-content: space-between;
+    }
+
+}
+
+
+@media (min-width: 1440px) {
+    
+    .menu__container {
+        width: 14em;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    }
+
+    .menu__lista {
+        padding: 1.2em 1em 1.2em .9em;
+    }
+
+}
